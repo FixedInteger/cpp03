@@ -2,23 +2,15 @@
 
 int main()
 {
-    ClapTrap clapTrap("ClapTrap");
-    ClapTrap clapTrapCopy(clapTrap);
-    ClapTrap clapTrapAssign;
-    
-    clapTrapAssign = clapTrap;
-    
-    clapTrap.attack("target");
-    clapTrap.takeDamage(5);
-    clapTrap.beRepaired(5);
-    
-    clapTrapCopy.attack("target");
-    clapTrapCopy.takeDamage(10);
-    clapTrapCopy.beRepaired(5);
-    
-    clapTrapAssign.attack("target");
-    clapTrapAssign.takeDamage(5);
-    clapTrapAssign.beRepaired(5);
+    std::string name = "9lwa";
+    ClapTrap clapTrap1("haha"); // first claptrap
+    ClapTrap clapTrap2(name); //second claptrap  
+    clapTrap1.attack(name);
+    clapTrap2.takeDamage(5);
+    clapTrap2.beRepaired(5);
+
+
+  
     
     return (0);
 }
