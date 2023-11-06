@@ -1,5 +1,5 @@
 CXX = C++ 
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g
 NAME = claptrap
 HEADER = Claptrap.hpp ScavTrap.hpp FragTrap.hpp
 SRCS = Claptrap.cpp main.cpp ScavTrap.cpp FragTrap.cpp 

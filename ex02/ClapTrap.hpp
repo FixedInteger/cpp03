@@ -11,6 +11,7 @@ class ClapTrap
 		ClapTrap();
 		~ClapTrap();
 		ClapTrap(const ClapTrap& copy);
+		ClapTrap(int hitPoints, int energyPoints, int attackDamage);
 		ClapTrap& operator=(const ClapTrap& copy);
 		//getters 
 		int get_hitpoints() const;
