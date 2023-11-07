@@ -11,6 +11,7 @@ class ClapTrap
         int _energyPoints;
         int _attackDamage;
     public :
+        //canonical form
         ClapTrap();
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap& copy);

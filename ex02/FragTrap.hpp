@@ -2,10 +2,9 @@
 #define FRAGTRAP_HPP
 #include "ClapTrap.hpp"
 
-class FragTrap : public   ClapTrap
+class FragTrap : public  ClapTrap
 {
-    private :
-        std::string _name;
+
     public :
         //orthodox form
         FragTrap();
@@ -13,11 +12,9 @@ class FragTrap : public   ClapTrap
         FragTrap(const FragTrap& copy);
         ~FragTrap();
         FragTrap& operator=(const FragTrap& copy);
+        //member functions
         void highFivesGuys(void);
-        //getters
-        std::string get_name(void) const;
-        //setters
-        void set_name(std::string name);
+
 };
 
 

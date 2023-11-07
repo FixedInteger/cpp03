@@ -3,23 +3,21 @@
 #include <iostream>
 class ClapTrap
 {
-	private:
-		int _hitPoints;
-		int _energyPoints;
-		int _attackDamage;
-	public:
-		ClapTrap();
-		~ClapTrap();
-		ClapTrap(const ClapTrap& copy);
-		ClapTrap(int hitPoints, int energyPoints, int attackDamage);
-		ClapTrap& operator=(const ClapTrap& copy);
-		//getters 
-		int get_hitpoints() const;
-		int get_energypoints() const;
-		int get_attackdamage() const;
-		//setters
-		void set_hitpoints(int hitPoints);
-		void set_energypoints(int energyPoints);
-		void set_attackdamage(int attackDamage);
+    protected :
+        std::string _name;
+        int _hitPoints;
+        int _energyPoints;
+        int _attackDamage;
+    public :
+        ClapTrap();
+        ClapTrap(std::string name);
+        ClapTrap(const ClapTrap& copy);
+        ~ClapTrap();
+        ClapTrap& operator=(const ClapTrap& copy);
+        void attack(std::string const& target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        
 };
+
 #endif //CLAPTRAP_HPP

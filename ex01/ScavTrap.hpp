@@ -1,15 +1,16 @@
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 #include "ClapTrap.hpp"
-class ScavTrap : private  ClapTrap
+class ScavTrap : public  ClapTrap
 {
-	private:
-		std::string _name;
 	public:
+		//canonical form
 		ScavTrap();
 		~ScavTrap();
+		ScavTrap(std:: string name);
 		ScavTrap(const ScavTrap& copy);
 		ScavTrap& operator=(const ScavTrap& copy);
+		//member functions
 		void attack(std::string const & target);
         void guardGate();
 };

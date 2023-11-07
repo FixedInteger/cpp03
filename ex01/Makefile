@@ -1,15 +1,16 @@
 CC = c++
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 NAME = claptrap
-SRCS = Claptrap.cpp main.cpp ScavTrap.cpp 
+SRCS = ClapTrap.cpp main.cpp ScavTrap.cpp
+HEADER = ClapTrap.hpp ScavTrap.hpp
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER)
 	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
-%.o: %.cpp %.hpp
+%.o: %.cpp $(HEADER)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:

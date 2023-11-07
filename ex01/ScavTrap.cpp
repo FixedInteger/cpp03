@@ -1,12 +1,21 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "ScavTrap Default constructor called" << std::endl;
-    ScavTrap::set_hitpoints(100);
-    ScavTrap::set_energypoints(50);
-    ScavTrap::set_attackdamage(20);
+
 }
+
+
+ScavTrap ::ScavTrap(std:: string name) 
+{
+	this->_name = name;
+	this->_energyPoints = 50;
+	this->_hitPoints = 100;
+	this->_attackDamage = 20;
+	std::cout << "ScavTrap Constructor called" << std::endl;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap Destructor called" << std::endl;
@@ -22,20 +31,28 @@ ScavTrap& ScavTrap::operator=(const ScavTrap& copy)
 	if (this != &copy)
 	{
 		this->_name = copy._name;
-		this->set_hitpoints(copy.get_hitpoints());
-		this->set_energypoints(copy.get_energypoints());
+		this->_hitPoints = copy._hitPoints;
+		this->_energyPoints = copy._energyPoints;
+		this->_attackDamage = copy._attackDamage;
 	}
 	return (*this);
 }
 
 void ScavTrap::attack(std::string const & target)
 {
-    if(this->get_hitpoints() == 0)
-    {
-        std::cout << "ScavTrap " << this->_name << " can't attack " << target << " because it's dead" << std::endl;
-        return ;
-    }
-	std::cout << "ScavTrap " << this->_name << " attack " << target << " causing " << this->get_hitpoints() << " points of damage!" << std::endl;
+
+	if(_hitPoints == 0 || _energyPoints == 0)
+	{
+		std::cout << _name << " can't attack. Not enough hit points or energy points." << std::endl;
+		return;
+	}
+	if (_hitPoints > 0 && _energyPoints > 0)
+	{
+		std::cout << "ScavTrap " << _name << " attacks " << target << " for " << _attackDamage << " damage!" << std::endl;
+		_energyPoints--;
+	} else {
+		std::cout << _name << " can't attack. Not enough hit points or energy points." << std::endl;
+	}
 }
 void ScavTrap::guardGate()
 {
